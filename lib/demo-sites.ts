@@ -60,3 +60,8 @@ export const demoSites: DemoSite[] = [
 export function getDemoSite(slug: string) {
   return demoSites.find((site) => site.slug === slug);
 }
+];
+
+export function getDemoSite(slug: string) {
+  return demoSites.find((site) => site.slug === slug);
+}
