@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#05070b;color:#f5f7fb;font-family:Arial,Helvetica,sans-serif}
+::selection{background:#7c3aed;color:white}
+.grid-bg{background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);background-size:48px 48px}
+.glow{box-shadow:0 0 80px rgba(124,58,237,.18)}
+.card{border:1px solid rgba(255,255,255,.09);background:rgba(15,18,28,.72);backdrop-filter:blur(16px)}
+.gradient{background:linear-gradient(120deg,#fff 10%,#a78bfa 45%,#22d3ee 90%);-webkit-background-clip:text;background-clip:text;color:transparent}
