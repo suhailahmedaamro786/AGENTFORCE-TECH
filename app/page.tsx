@@ -1,3 +1,4 @@
+import { demoSites } from "@/lib/demo-sites";
 import { ArrowRight, Bot, BrainCircuit, Check, ChevronRight, Code2, Database, Globe2, Headphones, Layers3, MessageSquareText, Network, PlugZap, Rocket, ShieldCheck, Sparkles, Workflow, Zap } from "lucide-react";
 
 const services = [
@@ -15,22 +16,7 @@ const services = [
   ["AI Product Consulting", "Technical discovery, architecture planning and practical AI strategy before development begins.", Zap]
 ] as const;
 
-const projects = [
-  { title:"NPSD School ERP", tag:"School SaaS", desc:"Production-focused school platform with Student, Teacher and Admin portals, admissions, attendance, results and QR workflows.", stack:"Next.js · Supabase · PostgreSQL · RLS · QR", href:"https://student-portal-chi-navy.vercel.app/" },
-  { title:"University AI Assistant", tag:"AI Web App", desc:"AI-powered university assistant for conversational responses, university information and academic guidance.", stack:"Next.js · TypeScript · AI · Tailwind", href:"https://aamro-university-agent.vercel.app/" },
-  { title:"AI StudyMate", tag:"Multi-Agent AI", desc:"Learning platform with Tutor, Quiz, Evaluator, Planner and Career agents backed by RAG.", stack:"Next.js · FastAPI · Supabase · RAG", href:"https://ai-studymate-dkel.vercel.app" },
-  { title:"Suhail AI", tag:"AI Assistant", desc:"Personal AI assistance experience built with modern React, TypeScript and Supabase architecture.", stack:"React · TypeScript · Supabase · AI", href:"https://personal-ai-assistance-pearl.vercel.app" },
-  { title:"Physical AI & Humanoid Robotics", tag:"AI Documentation", desc:"Interactive technical learning platform for physical AI and humanoid robotics with structured documentation.", stack:"Next.js · TypeScript · 3D · Tailwind", href:"https://book-skp-claude.vercel.app/" },
-  { title:"Islamic Worship Assistant", tag:"Web Application", desc:"Responsive worship assistant with prayer times, Quran features and Ramadan-focused tools.", stack:"Next.js · TypeScript · Islamic APIs", href:"https://v0-ramzan-app-features.vercel.app/" },
-  { title:"E-Commerce Book Store", tag:"E-Commerce", desc:"Bookstore experience with product catalog, cart, authentication, checkout and order workflows.", stack:"Next.js · TypeScript · Sanity · Tailwind", href:"https://final-hackthoon-2-ska-git-main-suhailahmedaamros-projects.vercel.app/" },
-  { title:"NJV School Management", tag:"Management System", desc:"School management workflow covering registration, attendance, grades and communication.", stack:"Next.js · TypeScript · Database · Tailwind", href:"https://njv-school.vercel.app/" },
-  { title:"GDP Dashboard", tag:"Python Application", desc:"Interactive economic-data dashboard with country comparisons, historical trends and visual analytics.", stack:"Python · Streamlit · Pandas · Plotly", href:"https://gdp-dashboard-uskmsgizln.streamlit.app/" },
-  { title:"Multi-Project Python App", tag:"Python Application", desc:"Collection of interactive Python utilities and productivity tools in one Streamlit experience.", stack:"Python · Streamlit · Plotly · Pandas", href:"https://suhailahmedaamro-python-projects-projects-60ybw3.streamlit.app/" },
-  { title:"Personal Library Manager", tag:"Python Application", desc:"Library manager for cataloging books, tracking reading status and visualizing collection statistics.", stack:"Python · Streamlit · Pandas · Plotly", href:"https://suhailahmedaamro-library-manager-py-library-manager-txxaiw.streamlit.app/" },
-  { title:"Personal Portfolio", tag:"Professional Website", desc:"Responsive portfolio with project showcase, contact workflow, dark mode, CV access and AI assistant.", stack:"Next.js · TypeScript · Tailwind · Gemini", href:"https://suhailahmedaamro.vercel.app/" },
-  { title:"AgentForge AI", tag:"Agentic Automation", desc:"Multi-agent workflow concept connecting research, development, review and delivery.", stack:"Python · LangGraph · Agents · MCP", href:"https://github.com/suhailahmedaamro786/AGENTFORCE-TECH" },
-  { title:"Smart Attendance", tag:"Business Automation", desc:"QR-driven attendance workflow designed to replace repetitive manual tracking with a digital system.", stack:"Web App · QR · Automation", href:"https://github.com/suhailahmedaamro786" }
-];
+const projects = demoSites;
 
 const process = [
   ["01","Discover","Understand the problem, users, constraints and success metrics."],
@@ -85,7 +71,7 @@ export default function Home() {
 
       <section id="work" className="mx-auto max-w-7xl px-5 py-24 sm:px-6 sm:py-28 lg:px-8">
         <div className="flex flex-col justify-between gap-5 sm:flex-row sm:items-end"><div><p className="eyebrow text-cyan-300">Websites & Products</p><h2 className="section-title mt-4">Built for real-world use.</h2></div><a href="https://github.com/suhailahmedaamro786" className="text-sm text-zinc-400 transition hover:text-white">View GitHub <ArrowRight className="ml-1 inline h-4 w-4" /></a></div>
-        <div className="mt-12 grid gap-4 lg:grid-cols-2">{projects.map((p,i) => <a href={p.href} target="_blank" rel="noreferrer" key={p.title} className="project-card group rounded-3xl p-6 sm:p-8"><div className="flex items-center justify-between"><span className="rounded-full bg-cyan-400/10 px-3 py-1 text-xs text-cyan-200">{p.tag}</span><span className="text-xs text-zinc-700">0{i+1}</span></div><div className="project-visual mt-7 grid h-36 place-items-center overflow-hidden rounded-2xl sm:h-44"><div className="visual-lines" /><div className="relative grid h-14 w-14 place-items-center rounded-2xl border border-violet-300/20 bg-violet-500/10 text-violet-200 shadow-2xl shadow-violet-500/20"><Layers3 className="h-6 w-6" /></div></div><div className="mt-7"><h3 className="text-2xl font-bold">{p.title}</h3><p className="mt-3 max-w-xl leading-7 text-zinc-400">{p.desc}</p><p className="mt-5 text-[10px] font-semibold uppercase tracking-[.16em] text-zinc-600">{p.stack}</p></div><div className="mt-7 flex items-center gap-2 text-sm text-zinc-300">View project <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" /></div></a>)}</div>
+        <div className="mt-12 grid gap-4 lg:grid-cols-2">{projects.map((p,i) => <a href={p.demoHref} key={p.title} className="project-card group rounded-3xl p-6 sm:p-8"><div className="flex items-center justify-between"><span className="rounded-full bg-cyan-400/10 px-3 py-1 text-xs text-cyan-200">{p.tag}</span><span className="text-xs text-zinc-700">0{i+1}</span></div><div className="project-visual mt-7 grid h-36 place-items-center overflow-hidden rounded-2xl sm:h-44"><div className="visual-lines" /><div className="relative grid h-14 w-14 place-items-center rounded-2xl border border-violet-300/20 bg-violet-500/10 text-violet-200 shadow-2xl shadow-violet-500/20"><Layers3 className="h-6 w-6" /></div></div><div className="mt-7"><h3 className="text-2xl font-bold">{p.title}</h3><p className="mt-3 max-w-xl leading-7 text-zinc-400">{p.desc}</p><p className="mt-5 text-[10px] font-semibold uppercase tracking-[.16em] text-zinc-600">{p.stack}</p></div><div className="mt-7 flex flex-wrap items-center gap-3 text-sm"><span className="inline-flex items-center gap-2 text-zinc-200">View Demo <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" /></span>{p.liveHref && <span className="rounded-full border border-white/10 px-3 py-1 text-xs text-zinc-500">Live production</span>}</div></a>)}</div>
       </section>
 
       <section id="process" className="section-band py-24 sm:py-28">
